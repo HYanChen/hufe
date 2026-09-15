@@ -1,0 +1,6 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import {applyEnterpriseLookup,clearEnterpriseAutofill} from '../utils/enterpriseLookup.js'
+test('企业查询只补空白，不覆盖手填项或设置申请人身份；名称变化清除旧自动值但保留手改值',()=>{const form={enterpriseName:'测试公司',creditCode:'',industry:'手填行业',summary:'',contactName:'本人联系人'},result={available:true,enterpriseName:'测试公司',fields:{creditCode:'123',industry:'查询行业',summary:'经营范围',contactName:'不应代填'}};const applied=applyEnterpriseLookup(form,result,'测试公司');assert.equal(form.industry,'手填行业');assert.equal(form.contactName,'本人联系人');assert.equal(form.creditCode,'123');form.summary='本人修改';clearEnterpriseAutofill(form,applied);assert.equal(form.creditCode,'');assert.equal(form.summary,'本人修改')})
+test('未找到结果、迟到结果或名称不相符不回填',()=>{const form={enterpriseName:'新的公司',creditCode:''};assert.deepEqual(applyEnterpriseLookup(form,{available:true,enterpriseName:'旧的公司',fields:{creditCode:'123'}},'旧的公司'),{});assert.deepEqual(applyEnterpriseLookup(form,{available:false},'新的公司'),{});assert.equal(form.creditCode,'')})
+test('城市和地区编号不能混合不同来源',()=>{const form={enterpriseName:'测试公司',city:'长沙',regionCode:''};applyEnterpriseLookup(form,{available:true,enterpriseName:'测试公司',fields:{city:'北京市',regionCode:'CN-11'}},'测试公司');assert.equal(form.city,'长沙');assert.equal(form.regionCode,'')})

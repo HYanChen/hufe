@@ -1,0 +1,11 @@
+GeoNames cities15000 geographic data
+Source: https://www.geonames.org/
+Download: https://download.geonames.org/export/dump/cities15000.zip
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+License terms: https://creativecommons.org/licenses/by/4.0/
+Dataset documentation: https://download.geonames.org/export/dump/readme.txt
+
+This application redistributes a derived city-point catalog containing GeoNames
+identifiers, name aliases and WGS84 city coordinates. Dataset checksums and the
+generation timestamp are recorded in city-centers.json. Public city coordinates
+are used only to center a street map; they are not alumni locations or addresses.

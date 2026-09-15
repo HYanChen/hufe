@@ -1,0 +1,6 @@
+const fs = require('node:fs')
+const {activateConfig, atomicWrite} = require('./nginx.cjs')
+const [oldPort, newPort] = process.argv.slice(2)
+const candidate = activateConfig(fs.readFileSync('/original.conf', 'utf8'), oldPort, newPort)
+atomicWrite('/routes/hufe.pla.wiki.conf', candidate)
+console.log(`Validated candidate selected on loopback port ${newPort}; maintenance removed, 20 MiB API request limit configured.`)

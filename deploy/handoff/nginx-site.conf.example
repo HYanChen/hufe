@@ -1,0 +1,71 @@
+# 站点级示例；替换域名、证书、静态目录与上游端口后再 nginx -t。
+# 宝塔已有站点时合并到该站点配置；不要覆盖 nginx.conf 或其他站点。
+# SSL 证书须已签发。此示例不负责申请 / 自动续期证书。
+server {
+    listen 80;
+    server_name your-domain.invalid;
+    location ^~ /.well-known/acme-challenge/ {
+        root /www/wwwroot/your-domain;
+    }
+    location / {
+        return 301 https://your-domain.invalid$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    server_name your-domain.invalid;
+    ssl_certificate /REPLACE_WITH_CERTIFICATE/fullchain.pem;
+    ssl_certificate_key /REPLACE_WITH_CERTIFICATE/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    root /www/wwwroot/your-domain;
+    index index.html;
+
+    # API 必须优先反代且保留 /api/ 前缀，不能回退为前端 index.html。
+    # 大文件使用应用分片协议；不要因“5 GB 文件”将单请求无限放大。
+    location ^~ /api/ {
+        proxy_pass http://127.0.0.1:8787;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        # 当前示例只含一层可信 Nginx，覆盖客户端自带的转发头。
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Connection "";
+        client_max_body_size 20m;
+        client_body_timeout 300s;
+        proxy_request_buffering off;
+        proxy_buffering off;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+    }
+
+    location = /health {
+        proxy_pass http://127.0.0.1:8787;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        add_header Cache-Control "no-store" always;
+    }
+
+    location = /admin { return 302 /admin/; }
+    location = /admin/index.html {
+        add_header Cache-Control "no-cache, no-store, must-revalidate" always;
+    }
+    location /admin/ {
+        try_files $uri $uri/ /admin/index.html;
+    }
+    location = /index.html {
+        add_header Cache-Control "no-cache, no-store, must-revalidate" always;
+    }
+    location / { try_files $uri $uri/ /index.html; }
+
+    # 静态文件缺失必须返回 404；防止脚本请求拿到 HTML。
+    location ~* \.(?:js|mjs|css|map|svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf)$ {
+        try_files $uri =404;
+        expires 1h;
+    }
+    location ~ /\.(?!well-known/) { deny all; }
+    location ~* ^/(?:server|source|release|deploy|backups|node_modules)(?:/|$) { deny all; }
+    location ~* \.(?:sql|env|log|tar|gz|zip|bak)$ { deny all; }
+}

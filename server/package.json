@@ -1,0 +1,31 @@
+{
+  "name": "@hufe-alumni/server",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "湖财人官网内容同步、学校新用户注册实名校验与本地账号网关",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "sync": "node src/cli/sync.js",
+    "dev:admin:create": "node src/cli/create-dev-admin.js",
+    "dev:user:create": "node src/cli/create-dev-user.js",
+    "dev:org-manager:create": "node src/cli/create-dev-organization-manager.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.3.0",
+    "@fastify/helmet": "^13.1.0",
+    "@fastify/rate-limit": "^11.1.0",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.4.2",
+    "fast-xml-parser": "^5.10.0",
+    "fastify": "^5.10.0",
+    "jose": "^6.2.3",
+    "mysql2": "^3.15.3",
+    "sanitize-html": "^2.17.6"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "pages": [
+    { "path": "pages/home/index", "style": { "navigationBarTitleText": "湖财人", "enablePullDownRefresh": true } },
+    { "path": "pages/services/index", "style": { "navigationBarTitleText": "湖财服务" } },
+    { "path": "pages/community/index", "style": { "navigationBarTitleText": "湖财圈" } },
+    { "path": "pages/community-comments/index", "style": { "navigationBarTitleText": "动态与评论", "enablePullDownRefresh": true } },
+    { "path": "pages/mine/index", "style": { "navigationBarTitleText": "我的" } },
+    { "path": "pages/profile/index", "style": { "navigationBarTitleText": "我的资料" } },
+    { "path": "pages/conversations/index", "style": { "navigationBarTitleText": "对话" } },
+    { "path": "pages/chat/index", "style": { "navigationBarTitleText": "对话", "disableScroll": true } },
+    { "path": "pages/verify/index", "style": { "navigationBarTitleText": "湖财人账号登录" } },
+    { "path": "pages/change-password/index", "style": { "navigationBarTitleText": "设置个人密码" } },
+    { "path": "pages/register/index", "style": { "navigationBarTitleText": "新用户实名注册" } },
+    { "path": "pages/manual-verification/index", "style": { "navigationBarTitleText": "人工实名认证", "navigationBarBackgroundColor": "#F4F6FA" } },
+    { "path": "pages/account-conflict/index", "style": { "navigationBarTitleText": "账号唯一性处理", "navigationBarBackgroundColor": "#F4F6FA" } },
+    { "path": "pages/sso-webview/index", "style": { "navigationBarTitleText": "注册实名校验" } },
+    { "path": "pages/official-news/index", "style": { "navigationBarTitleText": "湖财官网资讯", "enablePullDownRefresh": true } },
+    { "path": "pages/calendar/index", "style": { "navigationBarTitleText": "学校校历", "enablePullDownRefresh": true } },
+    { "path": "pages/card/index", "style": { "navigationBarTitleText": "湖财身份卡" } },
+    { "path": "pages/gate/index", "style": { "navigationBarTitleText": "平台返校身份核验" } },
+    { "path": "pages/events/index", "style": { "navigationBarTitleText": "校友活动" } },
+    { "path": "pages/event-detail/index", "style": { "navigationBarTitleText": "活动详情" } },
+    { "path": "pages/chapters/index", "style": { "navigationBarTitleText": "校友组织", "enablePullDownRefresh": true } },
+    { "path": "pages/chapter-detail/index", "style": { "navigationBarTitleText": "组织主页", "enablePullDownRefresh": true } },
+    { "path": "pages/chapter-about/index", "style": { "navigationBarTitleText": "组织简介", "enablePullDownRefresh": true } },
+    { "path": "pages/chapter-contact/index", "style": { "navigationBarTitleText": "联系组织", "enablePullDownRefresh": true } },
+    { "path": "pages/chapter-members/index", "style": { "navigationBarTitleText": "组织成员", "enablePullDownRefresh": true } },
+    { "path": "pages/chapter-album/index", "style": { "navigationBarTitleText": "组织相册", "enablePullDownRefresh": true } },
+    { "path": "pages/chapter-messages/index", "style": { "navigationBarTitleText": "组织留言", "enablePullDownRefresh": true } },
+    { "path": "pages/chapter-manager/index", "style": { "navigationBarTitleText": "组织管理工作台", "enablePullDownRefresh": true } },
+    { "path": "pages/chapter-publish/index", "style": { "navigationBarTitleText": "组织内容发布" } },
+    { "path": "pages/directory/index", "style": { "navigationBarTitleText": "校友名录" } },
+    { "path": "pages/campus-visit/index", "style": { "navigationBarTitleText": "返校预约" } },
+    { "path": "pages/news-detail/index", "style": { "navigationBarTitleText": "湖财资讯" } },
+    { "path": "pages/post-editor/index", "style": { "navigationBarTitleText": "发布动态" } },
+    { "path": "pages/ecosystem/index", "style": { "navigationBarTitleText": "校友生态圈", "enablePullDownRefresh": true } },
+    { "path": "pages/enterprises/index", "style": { "navigationBarTitleText": "校友企业馆", "enablePullDownRefresh": true } },
+    { "path": "pages/collaboration/index", "style": { "navigationBarTitleText": "合作广场", "enablePullDownRefresh": true } },
+    { "path": "pages/collaboration-editor/index", "style": { "navigationBarTitleText": "实名发布合作" } },
+    { "path": "pages/academy/index", "style": { "navigationBarTitleText": "校友课堂", "enablePullDownRefresh": true } },
+    { "path": "pages/alumni-map/index", "style": { "navigationBarTitleText": "同城地图", "enablePullDownRefresh": true } },
+    { "path": "pages/enterprise-owner/index", "style": { "navigationBarTitleText": "企业主工作台", "enablePullDownRefresh": true } },
+    { "path": "pages/enterprise-job-editor/index", "style": { "navigationBarTitleText": "企业招聘编辑" } },
+    { "path": "pages/jobs/index", "style": { "navigationBarTitleText": "校友招聘" } },
+    { "path": "pages/mentors/index", "style": { "navigationBarTitleText": "校友导师" } },
+    { "path": "pages/mentor-profile/index", "style": { "navigationBarTitleText": "我的导师资料" } },
+    { "path": "pages/volunteer/index", "style": { "navigationBarTitleText": "校友志愿者" } },
+    { "path": "pages/giving/index", "style": { "navigationBarTitleText": "回馈母校" } },
+    { "path": "pages/giving-certificate/index", "style": { "navigationBarTitleText": "公益证书", "navigationBarBackgroundColor": "#F4F6FA" } },
+    { "path": "pages/benefits/index", "style": { "navigationBarTitleText": "湖财权益中心", "enablePullDownRefresh": true } },
+    { "path": "pages/inbox/index", "style": { "navigationBarTitleText": "消息与办理进度", "enablePullDownRefresh": true } },
+    { "path": "pages/feedback/index", "style": { "navigationBarTitleText": "意见建议" } },
+    { "path": "pages/about/index", "style": { "navigationBarTitleText": "关于湖财人" } }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "湖财人",
+    "navigationBarBackgroundColor": "#F4F6FA",
+    "backgroundColor": "#F4F6FA",
+    "backgroundTextStyle": "dark",
+    "app-plus": {
+      "bounce": "none"
+    }
+  },
+  "tabBar": {
+    "color": "#7D8798",
+    "selectedColor": "#033481",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "height": "58px",
+    "fontSize": "11px",
+    "iconWidth": "24px",
+    "spacing": "4px",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/services/index",
+        "text": "服务",
+        "iconPath": "static/tabbar/services.png",
+        "selectedIconPath": "static/tabbar/services-active.png"
+      },
+      {
+        "pagePath": "pages/conversations/index",
+        "text": "对话",
+        "iconPath": "static/tabbar/chat.png",
+        "selectedIconPath": "static/tabbar/chat-active.png"
+      },
+      {
+        "pagePath": "pages/community/index",
+        "text": "湖财圈",
+        "iconPath": "static/tabbar/community.png",
+        "selectedIconPath": "static/tabbar/community-active.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mine-active.png"
+      }
+    ]
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^SupportFooter$": "@/components/SupportFooter.vue"
+    }
+  }
+}

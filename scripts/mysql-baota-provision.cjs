@@ -1,0 +1,12 @@
+const fs=require('node:fs')
+const path=require('node:path')
+const {randomBytes}=require('node:crypto')
+const directory='/mysql'
+if(fs.existsSync(path.join(directory,'application.env')))throw Error('Existing database credentials preserved; provisioning refused')
+fs.mkdirSync(path.join(directory,'secrets'),{recursive:true,mode:0o700})
+const password=randomBytes(36).toString('base64url'),rootPassword=randomBytes(36).toString('base64url')
+const write=(name,value)=>fs.writeFileSync(path.join(directory,name),value,{mode:0o600,flag:'wx'})
+write('application.env',`DATABASE_DRIVER=mysql\nMYSQL_HOST=hufe-mysql\nMYSQL_PORT=3306\nMYSQL_DATABASE=hufe_alumni\nMYSQL_USER=hufe_app\nMYSQL_PASSWORD=${password}\n`)
+write('container.env',`MYSQL_ROOT_PASSWORD=${rootPassword}\nMYSQL_DATABASE=hufe_alumni\nMYSQL_USER=hufe_app\nMYSQL_PASSWORD=${password}\n`)
+write('secrets/client.cnf',`[client]\nuser=root\npassword=${rootPassword}\n`)
+console.log('Private MySQL credentials created; nothing sensitive displayed.')

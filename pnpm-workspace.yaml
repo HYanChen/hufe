@@ -1,0 +1,13 @@
+packages:
+  - .
+  - server
+  - admin
+
+allowBuilds:
+  core-js: true
+  core-js-pure: true
+  esbuild: true
+onlyBuiltDependencies:
+  - core-js
+  - core-js-pure
+  - esbuild

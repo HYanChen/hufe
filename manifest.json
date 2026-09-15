@@ -1,0 +1,55 @@
+{
+    "name" : "湖财人",
+    "appid" : "__UNI__HUFEALUMNI",
+    "description" : "面向湖南财政经济学院学生、教师、教职工与校友的多端实名服务平台",
+    "versionName" : "0.2.0",
+    "versionCode" : "200",
+    "transformPx" : false,
+    "uniStatistics" : {
+        "enable" : false
+    },
+    "app-plus" : {
+        "usingComponents" : true,
+        "nvueStyleCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : true,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        "distribute" : {
+            "android" : {
+                "permissions" : []
+            },
+            "ios" : {
+                "dSYMs" : true
+            },
+            "sdkConfigs" : {}
+        }
+    },
+    "h5" : {
+        "title" : "湖财人",
+        "router" : {
+            "mode" : "hash",
+            "base" : "/"
+        },
+        "devServer" : {
+            "https" : false
+        }
+    },
+    "mp-weixin" : {
+        "appid" : "",
+        "setting" : {
+            "urlCheck" : true,
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true
+        },
+        "usingComponents" : true
+    },
+    "mp-alipay" : {
+        "usingComponents" : true
+    },
+    "vueVersion" : "3"
+}

@@ -1,0 +1,28 @@
+# 原生 Linux / systemd 单进程模板；不是 Docker 单元。
+# 部署前替换 node 路径，创建 hufe 专用低权限用户，并填写 runtime.env。
+[Unit]
+Description=HUFE Alumni API (single writer)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=hufe
+Group=hufe
+WorkingDirectory=/opt/hufe-platform/current/server
+ExecStart=/usr/local/bin/node --env-file=/opt/hufe-platform/shared/runtime.env src/index.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+KillSignal=SIGTERM
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/hufe-platform/shared/data
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

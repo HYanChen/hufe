@@ -1,0 +1,23 @@
+{
+  "version": "202609",
+  "name": "湖南财政经济学院",
+  "englishName": "Hunan College of Finance and Economics",
+  "sources": {
+    "crest": {
+      "file": "official-crest.pdf",
+      "sha256": "5bdf5cb3b24b5e4af3310db958d39217fb319cb11cd27aa96d743ac186b2d7f8"
+    },
+    "wordmark": {
+      "file": "official-wordmark.jpg",
+      "sha256": "a0f52e4f1b89eee66a23bc7ddf4782a31f9a7cfe25c750a843145823a0d73206",
+      "width": 3766,
+      "height": 852
+    }
+  },
+  "output": {
+    "logo": "school-logo-202609.svg",
+    "crest": "school-crest-202609.svg",
+    "wordmark": "school-wordmark-202609.jpg"
+  },
+  "treatment": "PDF paths retained; original JPEG embedded unchanged; proportional placement on a white background."
+}

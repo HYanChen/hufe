@@ -1,0 +1,11 @@
+{
+  "id": "changsha-v1",
+  "file": "changsha-v1.pmtiles",
+  "name": "长沙及周边街道底图 · 2026-09-12",
+  "sha256": "835f661a0aee1d8c74a093b6a9a5e81a0ad85d83a64187c685868bdabe2f0972",
+  "source": "https://build.protomaps.com/20260912.pmtiles",
+  "attribution": "© OpenStreetMap contributors · Protomaps",
+  "license": "ODbL 1.0; Protomaps Produced Work",
+  "sourceVersion": "4.15.2",
+  "extractBounds": [111.85, 27.84, 114.28, 28.97]
+}

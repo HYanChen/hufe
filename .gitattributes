@@ -1,0 +1,11 @@
+* text=auto
+*.pmtiles binary
+*.xdb binary
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.pbf binary
